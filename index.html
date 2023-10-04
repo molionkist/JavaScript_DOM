@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <h1>Events</h1>
+    <button onclick="alert('Oops! request time out')">Click Me</button>
+
+    <button onclick="document.body.style.backgroundColor ='yellow'">Click to FUN </button>
+    <button id="turn-blue">Click to turn into blue</button>
+
+
+    <script>
+        const blue = document.getElementById('turn-blue');
+        blue.onclick = function blue() {
+            document.body.style.backgroundColor = 'blue'
+
+        }
+    </script>
+
+    <button id="eventHandle">Just Function</button>
+    <p id="clicking-method"></p>
+    <script>
+        // function functionClick() {
+        //     const clickingMethod = document.getElementById('clicking-method');
+        //     clickingMethod.innerText = 'mathod is working successfully!'
+        // }
+        document.getElementById('eventHandle').addEventListener('click', function () {
+            const clickingMethod = document.getElementById('clicking-method');
+            clickingMethod.innerText = 'mathod is working successfully!'
+
+        })
+    </script>
+
+    <input id="text-Change" type="text">
+    <button id="update-name">Update</button>
+    <p id="output">I can change by clicking update..</p>
+    <script>
+        document.getElementById('update-name').addEventListener('click', function () {
+            const textChange = document.getElementById('text-Change');
+            const output = document.getElementById('output');
+            output.innerText = textChange.value;
+
+
+        })
+
+    </script>
+
+
+    <header>
+        <h1>HEllo JSCRIPT</h1>
+
+    </header>
+    <section id="addh" class="blogss">
+        <h2>Blog-List</h2>
+        <ul id="addLi">
+            <li>Blog-1</li>
+            <li>Blog-2</li>
+            <li>Blog-3</li>
+            <li>Blog-4</li>
+        </ul>
+
+    </section>
+
+
+
+
+
+
+    <section>
+        <article>
+            <h2>heading-1</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis, harum ex. Illo, consequatur vel
+                modi voluptatem sunt nam. Excepturi ipsa id corrupti. Expedita ab facilis voluptatem eaque rem, quisquam
+                inventore adipisci labore ut neque? Sunt amet necessitatibus a ducimus animi?</p>
+        </article>
+        <article>
+            <h2>heading-2</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis, harum ex. Illo, consequatur vel
+                modi voluptatem sunt nam. Excepturi ipsa id corrupti. Expedita ab facilis voluptatem eaque rem, quisquam
+                inventore adipisci labore ut neque? Sunt amet necessitatibus a ducimus animi?</p>
+        </article>
+        <article>
+            <h2>heading-3</h2>
+            <p id="jscheck">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis, harum ex. Illo,
+                consequatur vel
+                modi voluptatem sunt nam. Excepturi ipsa id corrupti. Expedita ab facilis voluptatem eaque rem, quisquam
+                inventore adipisci labore ut neque? Sunt amet necessitatibus a ducimus animi?</p>
+        </article>
+
+    </section>
+    <script src="script.js"></script>
+    <script>
+        console.log(document);
+    </script>
+    <script>
+        const students = { name: 'istiak fahim', id: 25, bloodGroup: 0 };
+        // console.log(students);
+
+        const blogTitle = document.getElementsByTagName('article');
+        console.log(blogTitle);
+        for (const article of blogTitle) {
+            console.log(article.innerText);
+        }
+
+        const padmar = document.getElementById('jscheck')
+        padmar.setAttribute('jscheck', 'ohh, i did it.');
+        padmar.style.background = 'yellow';
+
+
+        const li = document.createElement('li');
+        li.innerText = 'Blog-6';
+        const ul = document.getElementById('addLi');
+        ul.appendChild(li);
+
+        const article = document.createElement('article');
+        const h3 = document.createElement('h3');
+        h3.innerText = 'My Awesome Blogs'
+        article.appendChild(h3);
+
+        const BlogSection = document.getElementById('addh');
+        BlogSection.appendChild(article);
+
+
+
+
+
+
+    </script>
+
+
+    <h2>Add your comment here!</h2>
+    <section>
+        <h4>Add Comment</h4>
+        <div id="comment-container">
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam magnam explicabo nostrum numquam
+                vero earum non ipsa cum quam cupiditate!</p>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam magnam explicabo nostrum numquam
+                vero earum non ipsa cum quam cupiditate!</p>
+        </div>
+        <div>
+
+
+            <textarea name="" id="new-comment" cols="30" rows="10"></textarea><br>
+            <button id="submit-comment">Post</button>
+        </div>
+    </section>
+    <script>
+        document.getElementById('submit-comment').addEventListener('click', function () {
+
+            const newcComment = document.getElementById('new-comment');
+            const p = document.createElement('p');
+            p.innerText = newcComment.value;
+            const commentContainer = document.getElementById('comment-container');
+            commentContainer.appendChild(p);
+            newcComment.value = '';
+
+
+        })
+    </script>
+
+
+
+</body>
+
+</html>
