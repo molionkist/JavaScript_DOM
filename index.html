@@ -165,6 +165,36 @@
 
         })
     </script>
+    <SECTIon>
+        <h2 id="delete-info"> DELETE BOX-delte from here .</h2>
+        <input id="delete-confirm" type="text" placeholder="Please type delete.">
+        <button id="delete-btn" disabled>Delete
+        </button>
+        <script>
+            document.getElementById('delete-btn').addEventListener('click', function () {
+                const deleteInfo = document.getElementById('delete-info').style.display = 'none';
+            })
+            document.getElementById('delete-confirm').addEventListener('focus', function () {
+                document.body.style.backgroundColor = 'red';
+            })
+            document.getElementById('delete-confirm').addEventListener('blur', function () {
+                document.body.style.backgroundColor = 'purple';
+            })
+            document.getElementById('delete-confirm').addEventListener('keyup', function (event) {
+                const deletebtn = document.getElementById('delete-btn');
+                if (event.target.value == 'delete') {
+                    const deletebtn = document.getElementById('delete-btn').removeAttribute('disabled');
+
+                }
+                else {
+                    deletebtn.setAttribute('disabled', true);
+                }
+            })
+        </script>
+
+    </SECTIon>
+
+
 
 
 
